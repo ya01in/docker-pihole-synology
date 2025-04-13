@@ -4,7 +4,7 @@ A Pi-hole Docker Compose for deploying on Synology NAS
 
 ## Description
 
-Pi-hole is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole) is to create a personal domain name sinkhole to block you from accidentally accessing unwanted domains like advertisements and trackers while browsing the web. Saving your bandwidth for what you intended.
+Pi-hole is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole) that creates a personal domain name sinkhole to block you from accidentally accessing unwanted domains like advertisements and trackers while browsing the web. Saving your bandwidth for what you intended.
 It is built with rich features such as DNS client/group management, and a DHCP server if needed.
 Originally designed for Raspberry Pi, but you can set up one using Docker.
 
@@ -23,6 +23,10 @@ I currently can access the admin page through reverse proxy, and clients connect
 
 - TAG: latest
 - SHA256: `feb8c881adba50db1a084d9818946051d6c439d04910b6bcecb7a644449e9fa8`
+
+## Reference
+
+- [docker-pi-hole - github](https://github.com/pi-hole/docker-pi-hole)
 
 ## Note
 
