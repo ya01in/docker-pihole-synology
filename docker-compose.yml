@@ -1,0 +1,24 @@
+services:
+  pihole:
+    container_name: <NAME_IN_PACKAGE_CONTAINER_MANAGER>
+    hostname: <HOSTNAME_IN_PIHOLE>
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    network_mode: "host"  # Using the NAS network directly.
+    environment:
+      TZ: <YOUR_TIMEZONE_TZ>
+      FTLCONF_webserver_api_password: <ADMIN_PASSWORD>  # Password for logging into your admin page
+      FTLCONF_webserver_port: <HTTP_PORT>  # The port for accessing the admin page through HTTP
+      FTLCONF_dns_upstreams: '8.8.4.4;8.8.8.8'  # Replace them with faster or safer DNS servers, each IP should be separated with ';'
+      FTLCONF_dns_listeningMode: 'all'  # Enable this if you have your VPN server set up with WAN access
+      DNSMASQ_USER: 'root'  # Synology NAS requires changing the user to 'root'
+    volumes:
+      - './pihole:/etc/pihole'
+      - './dnsmasq.d:/etc/dnsmasq.d'
+      - './config:/etc/config'
+    # https://github.com/pi-hole/docker-pi-hole#note-on-capabilities for each permission usage
+    cap_add:
+      - CAP_NET_BIND_SERVICE
+      - CAP_CHOWN
+      - CAP_SYS_NICE
+      - CAP_SYS_TIME
