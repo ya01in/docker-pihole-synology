@@ -1,6 +1,6 @@
 # docker-pihole-synology
 
-A Pi-hole docker compose file for its DNS sinkhole feature on Synology NAS
+A Pi-hole Docker Compose for deploying on Synology NAS
 
 ## Description
 
